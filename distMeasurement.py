@@ -5,29 +5,40 @@ import socket, select, sys
 from struct import *
 from timeit import default_timer as timer
 
+def fail(failures):
+    failures -= 1
+    print "   FAILURE:", (max_failures - failures), "of", max_failures
+    if failures > 0:
+        print "   - Retrying..."
+    else:
+        print "   - Exceeded failure limit, measurement abandoned"
+    return failures
+
 # Prepare to open sockets
 src_ip = '172.20.120.99'
 port = 33434
 icmp = socket.getprotobyname('icmp')
 udp = socket.getprotobyname('udp')
-init_ttl = 32
+max_hops = 32
+max_failures = 3
 
 # Read targets.txt
 with open('targets.txt', 'r') as targets:
     for target in targets:
-        failures = 3
+        failures = max_failures
         while failures > 0:
             target = ''.join(target.split())
        
             # Get destination IP of target
             dst_ip = socket.gethostbyname(target)
-
-            print "Measuring distance to target: {0} ( {1} )".format(target, dst_ip)    
+            
+            print ""
+            print "", "Measuring distance to target:", target, "(", dst_ip, ")"    
         
             # Create receiving and sending sockets
             recv_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, icmp)
             send_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, udp)
-            send_socket.setsockopt(socket.SOL_IP, socket.IP_TTL, init_ttl)
+            send_socket.setsockopt(socket.SOL_IP, socket.IP_TTL, max_hops)
             recv_socket.bind(("", port))
 
             # Begin RTT measurement
@@ -56,31 +67,47 @@ with open('targets.txt', 'r') as targets:
                     # Get return address
                     curr_addr = curr_addr[0]
 
-                    # Inspect TTL in IP headers
-                    ip_header = packet[0:20]
-                    iph = unpack('!BBHHHBBH4s4s' , ip_header)
-                    ttl = iph[5]
-                   
-                    try:
-                        curr_name = socket.gethostbyaddr(curr_addr)[0]
-                    except socket.error:
-                        curr_name = curr_addr
+                    if curr_addr == dst_ip:
+                        # Inspect TTL in IP headers
+                        ip_header = packet[0:20]
+                        iph = unpack('!BBHHHBBH4s4s', ip_header)
+                        ttl = iph[5]
+                        init_ttl = 0
                     
-                    print "   Hostname:", curr_name
-                    print "   RTT:", (end_time - start_time) * 1000, "ms"
-                    print "   Dist:", (64 - ttl), "hops"
 
+                        # Estimate initial TTL value of ICMP Echo reply
+                        if ttl > 64:
+                            init_ttl = 255
+                        else:
+                            init_ttl = 64   # Most common initial value
+
+                        try:
+                            curr_name = socket.gethostbyaddr(curr_addr)[0]
+                        except socket.error:
+                            curr_name = curr_addr
+                    
+                        print "   Hostname:", curr_name
+                        print "   RTT:", (end_time - start_time) * 1000, "ms"
+                        print "   Dist:", (init_ttl - ttl), "hops"
+
+                        failures = 0
+                    else:
+                        failures = fail(failures)
                 except socket.error:
-                    pass
+                    failures -= 1
+                    print "   FAILURE:", (max_failures - failures), "of", max_failures
+                    if failures > 0:
+                        print "   - Retrying..."
+                    else:
+                        print "   - Exceeded failure limit, measurement abandoned"
                 finally:
                     send_socket.close()
                     recv_socket.close()
-                    failures = 0
             else:
-                failures -= 1
-                print "   FAILURE:", (3 - failures), " of 3"
-                if failures > 0:
-                    print "   - Retrying..."
-                else:
-                    print "   - Exceeded failure limit, measurement abandoned"
-
+                failures = fail(failures)
+                #failures -= 1
+                #print "   FAILURE:", (max_failures - failures), "of", max_failures
+                #if failures > 0:
+                #    print "   - Retrying..."
+                #else:
+                #    print "   - Exceeded failure limit, measurement abandoned"

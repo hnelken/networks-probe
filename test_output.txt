@@ -1,40 +1,50 @@
-Measuring distance to target: www.google.co.in ( 173.194.123.87 )
-   Hostname: lga15s48-in-f23.1e100.net
-   RTT: 24.973154068 ms
+
+ Measuring distance to target: www.google.co.in ( 173.194.123.47 )
+   Hostname: lga15s47-in-f15.1e100.net
+   RTT: 25.778055191 ms
    Dist: 10 hops
-Measuring distance to target: www.blogfa.com ( 104.31.73.239 )
-   Hostname: 104.31.73.239
-   RTT: 29.139995575 ms
+
+ Measuring distance to target: www.blogfa.com ( 104.31.72.239 )
+   Hostname: 104.31.72.239
+   RTT: 25.7329940796 ms
    Dist: 12 hops
-Measuring distance to target: www.washingtonpost.com ( 192.33.31.56 )
+
+ Measuring distance to target: www.washingtonpost.com ( 192.33.31.56 )
    Hostname: a-vip07.insnw.net
-   RTT: 28.0599594116 ms
+   RTT: 25.3129005432 ms
    Dist: 8 hops
-Measuring distance to target: www.fedex.com ( 23.32.181.251 )
-   Hostname: a23-32-181-251.deploy.static.akamaitechnologies.com
-   RTT: 23.973941803 ms
-   Dist: 9 hops
-Measuring distance to target: www.oracle.com ( 23.33.84.173 )
-   Hostname: a23-33-84-173.deploy.static.akamaitechnologies.com
-   RTT: 24.1329669952 ms
-   Dist: 9 hops
-Measuring distance to target: www.chip.de ( 104.96.210.200 )
-   Hostname: a104-96-210-200.deploy.static.akamaitechnologies.com
-   RTT: 19.0818309784 ms
-   Dist: 5 hops
-Measuring distance to target: www.yandex.com.tr ( 87.250.255.11 )
+
+ Measuring distance to target: www.fedex.com ( 172.229.225.86 )
+   Hostname: a172-229-225-86.deploy.static.akamaitechnologies.com
+   RTT: 26.8468856812 ms
+   Dist: 8 hops
+
+ Measuring distance to target: www.oracle.com ( 104.85.160.114 )
+   Hostname: a104-85-160-114.deploy.static.akamaitechnologies.com
+   RTT: 29.2930603027 ms
+   Dist: 8 hops
+
+ Measuring distance to target: www.chip.de ( 104.85.164.65 )
+   Hostname: a104-85-164-65.deploy.static.akamaitechnologies.com
+   RTT: 29.5860767365 ms
+   Dist: 8 hops
+
+ Measuring distance to target: www.yandex.com.tr ( 87.250.255.11 )
    Hostname: yandex.com.tr
-   RTT: 102.642059326 ms
+   RTT: 101.021051407 ms
    Dist: 13 hops
-Measuring distance to target: www.avg.com ( 23.66.166.148 )
-   Hostname: a23-66-166-148.deploy.static.akamaitechnologies.com
-   RTT: 24.6119499207 ms
-   Dist: 9 hops
-Measuring distance to target: www.informer.com ( 67.228.17.114 )
+
+ Measuring distance to target: www.avg.com ( 23.66.214.173 )
+   Hostname: a23-66-214-173.deploy.static.akamaitechnologies.com
+   RTT: 24.4970321655 ms
+   Dist: 8 hops
+
+ Measuring distance to target: www.informer.com ( 67.228.17.114 )
    Hostname: 72.11.e443.ip4.static.sl-reverse.com
-   RTT: 73.4519958496 ms
+   RTT: 85.5159759521 ms
    Dist: 12 hops
-Measuring distance to target: www.gyazo.com ( 104.154.76.97 )
+
+ Measuring distance to target: www.gyazo.com ( 104.154.76.97 )
    Hostname: 97.76.154.104.bc.googleusercontent.com
-   RTT: 52.6461601257 ms
+   RTT: 53.3268451691 ms
    Dist: 18 hops
