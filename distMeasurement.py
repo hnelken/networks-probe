@@ -8,7 +8,6 @@ from timeit import default_timer as timer
 # Prepare to open sockets
 src_ip = '172.20.120.99'
 port = 33434
-max_hops = 30
 icmp = socket.getprotobyname('icmp')
 udp = socket.getprotobyname('udp')
 init_ttl = 32
