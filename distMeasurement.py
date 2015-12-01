@@ -42,7 +42,7 @@ class Probe:
                     send_time = timer()
 
                     # Send ICMP Echo request
-                    send_socket.sendto("", (target, self.port))
+                    send_socket.sendto("", (dst_ip, self.port))
             
                     # Perform select on recv socket to recover from blocking
                     read_ready, _, _ = select.select([recv_socket], [], [], 1)
@@ -83,6 +83,11 @@ class Probe:
         ip_raw = packet[0:20]
         ip_header = unpack('!BBHHHBBH4s4s', ip_raw)
 
+        icmp_raw = packet[20:28]
+        icmp_header = unpack('!BBHHH', icmp_raw)
+    
+        print "ICMP:", icmp_header
+        
         ttl = ip_header[5]
         init_ttl = 0
 
