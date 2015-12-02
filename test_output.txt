@@ -1,50 +1,43 @@
 
- Measuring distance to target: www.google.co.in ( 216.58.219.227 )
-   Hostname: lga25s41-in-f3.1e100.net
-   RTT: 65.8919811249 ms
-   Dist: 12 hops
+ Measuring distance to target: www.google.co.in ( 173.194.123.87 )
+    RTT: 30.4350852966 ms
+    Dist: 12 hops
 
- Measuring distance to target: www.foodnetwork.com ( 192.5.110.40 )
-   Hostname: a192-5-110-40.deploy.akamaitechnologies.com
-   RTT: 5.45811653137 ms
-   Dist: 4 hops
+ Measuring distance to target: www.indiatimes.com ( 192.5.110.39 )
+    RTT: 1.24192237854 ms
+    Dist: 5 hops
 
- Measuring distance to target: www.washingtonpost.com ( 192.33.31.56 )
-   Hostname: a-vip07.insnw.net
-   RTT: 13.7250423431 ms
-   Dist: 11 hops
+ Measuring distance to target: www.skype.com ( 157.56.109.9 )
+    RTT: 38.7840270996 ms
+    Dist: 14 hops
 
- Measuring distance to target: www.fedex.com ( 104.87.142.194 )
-   Hostname: a104-87-142-194.deploy.static.akamaitechnologies.com
-   RTT: 87.620973587 ms
-   Dist: 12 hops
+ Measuring distance to target: www.blogfa.com ( 104.31.73.239 )
+    RTT: 18.3939933777 ms
+    Dist: 11 hops
 
- Measuring distance to target: www.oracle.com ( 23.6.70.138 )
-   Hostname: a23-6-70-138.deploy.static.akamaitechnologies.com
-   RTT: 20.4420089722 ms
-   Dist: 7 hops
+ Measuring distance to target: www.oracle.com ( 23.203.156.121 )
+    RTT: 9.72580909729 ms
+    Dist: 7 hops
 
  Measuring distance to target: www.chip.de ( 192.5.110.41 )
-   Hostname: a192-5-110-41.deploy.akamaitechnologies.com
-   RTT: 41.4550304413 ms
-   Dist: 4 hops
+    RTT: 0.99515914917 ms
+    Dist: 5 hops
 
  Measuring distance to target: www.yandex.com.tr ( 87.250.255.11 )
-   Hostname: yandex.com.tr
-   RTT: 117.303133011 ms
-   Dist: 12 hops
+    RTT: 91.5360450745 ms
+    Dist: 9 hops
 
- Measuring distance to target: www.avg.com ( 23.203.158.118 )
-   Hostname: a23-203-158-118.deploy.static.akamaitechnologies.com
-   RTT: 47.7180480957 ms
-   Dist: 7 hops
+ Measuring distance to target: www.foodnetwork.com ( 192.5.110.41 )
+    RTT: 0.828981399536 ms
+    Dist: 5 hops
 
  Measuring distance to target: www.informer.com ( 67.228.17.114 )
-   Hostname: 72.11.e443.ip4.static.sl-reverse.com
-   RTT: 40.0311946869 ms
-   Dist: 12 hops
+    RTT: 40.0869846344 ms
+    Dist: 11 hops
 
  Measuring distance to target: www.gyazo.com ( 104.154.76.97 )
-   Hostname: 97.76.154.104.bc.googleusercontent.com
-   RTT: 45.5501079559 ms
-   Dist: 18 hops
+    RTT: 23.1490135193 ms
+    Dist: 17 hops
+
+Measurements complete.
+
